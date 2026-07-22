@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Elena Cheng — high school student, economics enthusiast, and youth initiative founder."
+    content="Elena Cheng's personal website featuring her academic achievements, research, community projects, volunteer experience, and interests."
   >
   <title>Elena Cheng | Personal Website</title>
 
   <style>
     :root {
       --navy: #0d2747;
-      --blue: #1565c0;
-      --bright-blue: #2196f3;
+      --deep-blue: #1565c0;
+      --blue: #2196f3;
       --light-blue: #e3f2fd;
-      --page: #f6f9fc;
+      --soft-blue: #f3f8fc;
       --white: #ffffff;
-      --text: #25384b;
-      --muted: #64778a;
+      --text: #24384c;
+      --muted: #617487;
       --line: #dce6ef;
-      --shadow: 0 18px 50px rgba(13, 39, 71, 0.1);
+      --shadow: 0 18px 45px rgba(13, 39, 71, 0.09);
       --radius: 18px;
     }
 
@@ -36,7 +36,7 @@
 
     body {
       color: var(--text);
-      background: var(--page);
+      background: #f7f9fc;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
     }
@@ -46,16 +46,20 @@
       text-decoration: none;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
     .container {
       width: min(1120px, calc(100% - 32px));
-      margin: auto;
+      margin: 0 auto;
     }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(12px);
     }
@@ -77,15 +81,16 @@
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 23px;
+      padding: 0;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
       list-style: none;
     }
 
     .nav-links a:hover {
-      color: var(--blue);
+      color: var(--deep-blue);
     }
 
     .hero {
@@ -93,41 +98,41 @@
       grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
       min-height: calc(100vh - 70px);
-      padding: 88px 0;
-      gap: 68px;
+      padding: 90px 0;
+      gap: 70px;
     }
 
     .eyebrow {
       display: inline-block;
       padding: 7px 12px;
       margin-bottom: 22px;
-      color: var(--blue);
+      color: var(--deep-blue);
       background: var(--light-blue);
       border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     h1 {
       margin-bottom: 20px;
       color: var(--navy);
-      font-size: clamp(3.3rem, 8vw, 6.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
+      font-size: clamp(3.6rem, 8vw, 7rem);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
     }
 
     .headline {
       max-width: 760px;
       margin-bottom: 18px;
-      color: var(--blue);
+      color: var(--deep-blue);
       font-size: clamp(1.2rem, 2.6vw, 1.7rem);
       font-weight: 800;
     }
 
     .hero-text {
-      max-width: 740px;
+      max-width: 730px;
       margin-bottom: 30px;
       color: var(--muted);
       font-size: 1.04rem;
@@ -144,16 +149,16 @@
       padding: 13px 21px;
       border-radius: 12px;
       font-weight: 800;
-      transition: 0.2s ease;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
     }
 
     .button-primary {
       color: var(--white);
-      background: linear-gradient(
-        135deg,
-        var(--bright-blue),
-        var(--navy)
-      );
+      background: linear-gradient(135deg, var(--blue), var(--navy));
       box-shadow: 0 12px 28px rgba(21, 101, 192, 0.22);
     }
 
@@ -163,11 +168,7 @@
       border: 1px solid var(--line);
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .profile-panel {
+    .profile-card {
       padding: 34px;
       background: var(--white);
       border: 1px solid var(--line);
@@ -182,48 +183,44 @@
       height: 150px;
       margin: 0 auto 24px;
       color: var(--white);
-      background: linear-gradient(
-        135deg,
-        var(--bright-blue),
-        var(--navy)
-      );
+      background: linear-gradient(135deg, var(--blue), var(--navy));
       border-radius: 50%;
       font-size: 3.4rem;
       font-weight: 800;
       letter-spacing: -0.08em;
     }
 
-    .profile-panel h2 {
+    .profile-card h2 {
       margin-bottom: 5px;
       color: var(--navy);
       text-align: center;
     }
 
-    .profile-panel > p {
+    .profile-card > p {
       color: var(--muted);
       text-align: center;
     }
 
-    .quick-facts {
+    .facts {
       display: grid;
-      gap: 12px;
+      gap: 11px;
       margin-top: 25px;
     }
 
-    .quick-fact {
+    .fact {
       padding: 13px 15px;
-      background: #f7faff;
+      background: var(--soft-blue);
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 11px;
     }
 
-    .quick-fact strong {
+    .fact strong {
       display: block;
       color: var(--navy);
-      font-size: 0.87rem;
+      font-size: 0.86rem;
     }
 
-    .quick-fact span {
+    .fact span {
       color: var(--muted);
       font-size: 0.84rem;
     }
@@ -233,16 +230,22 @@
       scroll-margin-top: 82px;
     }
 
+    .alternate {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
     .section-heading {
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 36px;
     }
 
     .section-label {
-      color: var(--blue);
-      font-size: 0.8rem;
+      color: var(--deep-blue);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
     }
 
@@ -260,67 +263,52 @@
       color: var(--muted);
     }
 
-    .card {
-      padding: 30px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 34px rgba(13, 39, 71, 0.07);
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .about p + p {
-      margin-top: 16px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .stat {
-      padding: 22px;
-      text-align: center;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 15px;
-    }
-
-    .stat strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--blue);
-      font-size: 1.45rem;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
-    .achievement h3,
-    .project h3 {
-      margin-bottom: 5px;
+    .card {
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(13, 39, 71, 0.06);
+    }
+
+    .alternate .card {
+      background: #fbfdff;
+    }
+
+    .card h3 {
+      margin-bottom: 6px;
       color: var(--navy);
-      font-size: 1.35rem;
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+
+    .card h4 {
+      margin: 22px 0 9px;
+      color: var(--navy);
+      font-size: 0.82rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .card ul {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .card p + p {
+      margin-top: 15px;
     }
 
     .subtitle {
       margin-bottom: 16px;
-      color: var(--blue);
+      color: var(--deep-blue);
       font-size: 0.92rem;
       font-weight: 800;
     }
@@ -329,77 +317,146 @@
       display: inline-block;
       padding: 6px 10px;
       margin-bottom: 17px;
-      color: var(--blue);
+      color: var(--deep-blue);
       background: var(--light-blue);
       border-radius: 999px;
-      font-size: 0.74rem;
+      font-size: 0.73rem;
       font-weight: 800;
     }
 
-    .achievement ul,
-    .project ul {
+    .about-grid {
       display: grid;
-      gap: 8px;
-      padding-left: 19px;
-      margin-top: 15px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
     }
 
-    .project {
+    .values {
+      display: grid;
+      gap: 12px;
+    }
+
+    .value {
+      padding: 16px;
+      background: var(--soft-blue);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .value strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+    }
+
+    .value span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .achievement-card {
       position: relative;
       overflow: hidden;
     }
 
-    .project::before {
+    .achievement-card::before,
+    .project-card::before,
+    .research-card::before {
       position: absolute;
       top: 0;
       left: 0;
       width: 5px;
       height: 100%;
       content: "";
-      background: linear-gradient(
-        var(--bright-blue),
-        var(--navy)
-      );
+      background: linear-gradient(var(--blue), var(--navy));
     }
 
-    .project h4 {
-      margin: 22px 0 9px;
+    .research-card {
+      grid-column: 1 / -1;
+    }
+
+    .research-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .research-step {
+      padding: 17px;
+      background: var(--soft-blue);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .research-step strong {
+      display: block;
+      margin-bottom: 5px;
       color: var(--navy);
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
-    .status-note {
-      padding: 13px 15px;
+    .research-step span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .project-process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .process-item {
+      padding: 15px;
+      background: var(--soft-blue);
+      border: 1px solid var(--line);
+      border-radius: 11px;
+    }
+
+    .process-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--navy);
+      font-size: 0.87rem;
+    }
+
+    .process-item span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .note {
+      padding: 14px 16px;
       margin-top: 19px;
       color: var(--navy);
-      background: #f2f8fd;
+      background: var(--light-blue);
       border-radius: 10px;
       font-size: 0.88rem;
       font-weight: 700;
     }
 
-    .skills {
+    .leadership-grid,
+    .skills-grid,
+    .interests-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    .skill {
+    .small-card {
       padding: 22px;
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: 14px;
     }
 
-    .skill h3 {
+    .small-card h3 {
       margin-bottom: 7px;
       color: var(--navy);
       font-size: 1rem;
     }
 
-    .skill p {
+    .small-card p {
       color: var(--muted);
       font-size: 0.88rem;
     }
@@ -411,11 +468,7 @@
       gap: 30px;
       padding: 46px;
       color: var(--white);
-      background: linear-gradient(
-        135deg,
-        var(--navy),
-        var(--blue)
-      );
+      background: linear-gradient(135deg, var(--navy), var(--deep-blue));
       border-radius: 24px;
       box-shadow: var(--shadow);
     }
@@ -444,12 +497,12 @@
       padding: 30px 0 38px;
       color: var(--muted);
       text-align: center;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       .hero,
-      .about,
+      .about-grid,
       .contact-card {
         grid-template-columns: 1fr;
       }
@@ -458,12 +511,18 @@
         min-height: auto;
       }
 
-      .profile-panel {
-        width: min(460px, 100%);
+      .profile-card {
+        width: min(470px, 100%);
       }
 
-      .stats,
-      .skills {
+      .research-steps,
+      .project-process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .leadership-grid,
+      .skills-grid,
+      .interests-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -480,8 +539,8 @@
 
       .nav-links {
         justify-content: center;
-        gap: 13px;
-        font-size: 0.84rem;
+        gap: 12px;
+        font-size: 0.82rem;
       }
 
       .hero {
@@ -494,9 +553,16 @@
       }
 
       .grid,
-      .stats,
-      .skills {
+      .research-steps,
+      .project-process,
+      .leadership-grid,
+      .skills-grid,
+      .interests-grid {
         grid-template-columns: 1fr;
+      }
+
+      .research-card {
+        grid-column: auto;
       }
 
       .card,
@@ -519,9 +585,10 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#research">Research</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#volunteer">Volunteer</a></li>
+        <li><a href="#interests">Interests</a></li>
       </ul>
     </div>
   </nav>
@@ -530,27 +597,28 @@
     <header class="container hero" id="home">
       <div>
         <span class="eyebrow">
-          Student · Economics · Social Impact
+          Economics · Youth Well-Being · Social Impact
         </span>
 
         <h1>Elena Cheng</h1>
 
         <p class="headline">
-          A high school student combining analytical thinking,
-          discipline, and empathy to create meaningful change.
+          A high school student exploring how analytical thinking,
+          observation, and empathy can create meaningful change.
         </p>
 
         <p class="hero-text">
-          I am an incoming junior at Qingdao Grand High School with
-          interests in economics, mathematics, data analysis, and youth
-          well-being. Through academic competitions, taekwondo, and
-          student-led projects, I am learning how to turn ideas into
-          practical action.
+          I am an incoming junior at Qingdao Grand High School. My main
+          interests include economics, mathematics, linguistics, youth
+          emotional well-being, and music-based learning. Through academic
+          competitions, independent research, taekwondo, volunteer work, and
+          student-led projects, I continue to develop my ability to understand
+          problems and turn ideas into practical action.
         </p>
 
         <div class="actions">
           <a class="button button-primary" href="#projects">
-            View My Projects
+            Explore My Projects
           </a>
 
           <a class="button button-secondary" href="#contact">
@@ -559,100 +627,103 @@
         </div>
       </div>
 
-      <aside class="profile-panel">
+      <aside class="profile-card">
         <div class="initials">EC</div>
 
         <h2>Elena Cheng</h2>
 
         <p>
-          Student · Economic Thinker · Youth Initiative Founder
+          Student · Researcher · Youth Initiative Founder
         </p>
 
-        <div class="quick-facts">
-          <div class="quick-fact">
+        <div class="facts">
+          <div class="fact">
             <strong>School</strong>
             <span>Qingdao Grand High School</span>
           </div>
 
-          <div class="quick-fact">
+          <div class="fact">
             <strong>Current Level</strong>
             <span>Incoming Junior</span>
           </div>
 
-          <div class="quick-fact">
-            <strong>Main Interests</strong>
-            <span>Economics, mathematics, social impact</span>
+          <div class="fact">
+            <strong>Academic Interests</strong>
+            <span>Economics, mathematics, linguistics and data analysis</span>
+          </div>
+
+          <div class="fact">
+            <strong>Community Interests</strong>
+            <span>Youth well-being and neurodiverse children</span>
           </div>
         </div>
       </aside>
     </header>
 
-    <section id="about">
+    <section id="about" class="alternate">
       <div class="container">
         <div class="section-heading">
           <span class="section-label">About Me</span>
 
           <h2>
-            Curious about systems. Committed to people.
+            Understanding systems while paying attention to people.
           </h2>
 
           <p>
-            My interests connect analytical learning with real
-            community needs.
+            My academic interests and community experiences have taught me
+            that careful analysis and empathy are both important when solving
+            real problems.
           </p>
         </div>
 
-        <div class="about">
+        <div class="about-grid">
           <article class="card">
             <p>
-              Economics fascinates me because it explains how
-              individual choices, institutions, and markets interact.
-              Mathematics and data analysis help me examine problems
-              logically, while Excel is helping me organize
-              information and communicate conclusions more clearly.
+              Economics interests me because it explains how individual
+              choices, businesses, institutions, and markets interact.
+              Mathematics helps me identify patterns and build logical
+              arguments, while linguistics shows me how language reflects
+              culture, history, and different ways of thinking.
             </p>
 
             <p>
-              My experience in academic competition has strengthened
-              my decision-making, systems thinking, and
-              problem-solving skills.
+              I enjoy connecting ideas across subjects. In economics, I am
+              interested in how psychology affects consumer behavior. In
+              linguistics, I look for the underlying structures that connect
+              different language systems. These experiences have strengthened
+              my curiosity, observation, and problem-solving skills.
             </p>
           </article>
 
-          <article class="card">
-            <p>
-              Taekwondo has taught me discipline, resilience, focus,
-              and calm thinking under pressure. I bring these
-              qualities into my academic work and community projects.
-            </p>
+          <div class="values">
+            <div class="value">
+              <strong>Observation</strong>
+              <span>
+                Identifying patterns in people, systems, language, and behavior.
+              </span>
+            </div>
 
-            <p>
-              I hope to continue combining analytical thinking with
-              empathy to create projects that help young people feel
-              heard, supported, and connected.
-            </p>
-          </article>
-        </div>
+            <div class="value">
+              <strong>Empathy</strong>
+              <span>
+                Understanding the emotions and needs of students, children, and
+                team members.
+              </span>
+            </div>
 
-        <div class="stats">
-          <div class="stat">
-            <strong>Top 10%</strong>
-            <span>IOL High Distinction</span>
-          </div>
+            <div class="value">
+              <strong>Discipline</strong>
+              <span>
+                Staying focused and calm through long-term taekwondo training.
+              </span>
+            </div>
 
-          <div class="stat">
-            <strong>Distinction</strong>
-            <span>NEC China PRE Division</span>
-          </div>
-
-          <div class="stat">
-            <strong>3 Grades</strong>
-            <span>Magic Box pilot coverage</span>
-          </div>
-
-          <div class="stat">
-            <strong>2 Projects</strong>
-            <span>Youth and community initiatives</span>
+            <div class="value">
+              <strong>Execution</strong>
+              <span>
+                Turning research and planning into real school activities.
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -661,52 +732,45 @@
     <section id="achievements">
       <div class="container">
         <div class="section-heading">
-          <span class="section-label">
-            Academic Achievements
-          </span>
+          <span class="section-label">Academic Achievements</span>
 
-          <h2>Learning beyond the classroom.</h2>
+          <h2>Applying knowledge beyond the classroom.</h2>
 
           <p>
-            Competitions have helped me apply knowledge, think
-            independently, and solve unfamiliar problems.
+            Academic competitions have allowed me to explore economics and
+            linguistics through unfamiliar and practical problems.
           </p>
         </div>
 
         <div class="grid">
-          <article class="card achievement">
-            <span class="badge">
-              High Distinction · Top 10%
-            </span>
+          <article class="card achievement-card">
+            <span class="badge">High Distinction · Top 10%</span>
 
             <h3>IOL Linguistics Competition</h3>
 
-            <p class="subtitle">
-              Rookie Junior Division
+            <p class="subtitle">Rookie Junior Division</p>
+
+            <p>
+              I earned High Distinction and placed within the top 10% in the
+              IOL Rookie Junior Division.
             </p>
 
             <p>
-              Earned High Distinction and placed within the top 10%
-              in the IOL Rookie Junior Division.
+              The competition showed me that linguistics and mathematics share
+              a similar underlying logic. Both require identifying structures,
+              recognizing patterns, and using a small number of rules to
+              interpret more complex information.
             </p>
 
             <ul>
-              <li>
-                Applied logical reasoning to unfamiliar language
-                systems.
-              </li>
-
-              <li>
-                Identified patterns across language, culture, and
-                structure.
-              </li>
+              <li>Analyzed unfamiliar language systems.</li>
+              <li>Connected language structure with logical reasoning.</li>
+              <li>Explored how language reflects culture and history.</li>
             </ul>
           </article>
 
-          <article class="card achievement">
-            <span class="badge">
-              Individual Distinction
-            </span>
+          <article class="card achievement-card">
+            <span class="badge">Individual Distinction</span>
 
             <h3>NEC China</h3>
 
@@ -715,131 +779,376 @@
             </p>
 
             <p>
-              Earned Individual Distinction in the PRE Division at
-              NEC China and participated in the NEC Global
-              Competition representing my school.
+              I earned Individual Distinction in the PRE Division at NEC China
+              and later participated in the NEC Global Competition while
+              representing my school.
+            </p>
+
+            <p>
+              The NEC experience helped me apply economic principles to
+              real-world questions and strengthened my ability to analyze
+              information, understand connected systems, and make
+              evidence-based decisions.
             </p>
 
             <ul>
-              <li>
-                Interpreted economic data and market trends.
-              </li>
-
-              <li>
-                Applied economic principles to real-world
-                challenges.
-              </li>
-
-              <li>
-                Developed systems thinking and evidence-based
-                decision-making.
-              </li>
+              <li>Economic analysis and data interpretation.</li>
+              <li>Systems thinking and decision-making.</li>
+              <li>Application of economic theories to practical problems.</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
+    <section id="research" class="alternate">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Economics Research</span>
+
+          <h2>
+            Algorithmic Pricing and Personalized Price Discrimination
+          </h2>
+
+          <p>
+            This research explored why online platforms may present different
+            prices to different users and how consumer psychology can influence
+            pricing decisions.
+          </p>
+        </div>
+
+        <article class="card research-card">
+          <h3>Research Question</h3>
+
+          <p>
+            I noticed that the same product, hotel, or ticket could have
+            different prices across users and platforms. I therefore examined
+            how browsing behavior, order history, regular spending levels, time
+            pressure, and consumer preferences could be related to personalized
+            pricing.
+          </p>
+
+          <div class="research-steps">
+            <div class="research-step">
+              <strong>Data Collection</strong>
+              <span>
+                Compared the same products across multiple platforms and
+                collected information from different users.
+              </span>
+            </div>
+
+            <div class="research-step">
+              <strong>Variables</strong>
+              <span>
+                Considered browsing frequency, ordering frequency, regular
+                spending level, and purchase timing.
+              </span>
+            </div>
+
+            <div class="research-step">
+              <strong>Analysis</strong>
+              <span>
+                Used statistical and economic reasoning to examine pricing
+                patterns and consumer behavior.
+              </span>
+            </div>
+          </div>
+
+          <h4>Main Observations</h4>
+
+          <ul>
+            <li>
+              Platforms can use consumer behavior data to create digital user
+              profiles.
+            </li>
+
+            <li>
+              Anchoring and the decoy effect may influence how consumers judge
+              whether a price is reasonable.
+            </li>
+
+            <li>
+              Time pressure and the effort required to compare platforms may
+              cause consumers to accept higher prices.
+            </li>
+
+            <li>
+              Consumer preferences and repeated purchasing habits can reduce
+              willingness to switch to alternatives.
+            </li>
+          </ul>
+
+          <h4>Fairness and Efficiency</h4>
+
+          <p>
+            Personalized pricing may improve market efficiency or make some
+            products accessible to different groups. However, it can also
+            create fairness concerns when consumers cannot understand how
+            prices are determined or when loyal users are charged more.
+          </p>
+
+          <h4>Possible Responses</h4>
+
+          <ul>
+            <li>Improve pricing transparency and access to comparison tools.</li>
+            <li>Strengthen oversight of extreme or discriminatory price changes.</li>
+            <li>Provide consumers with multiple purchasing options.</li>
+            <li>Encourage consumers to compare prices and protect their rights.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section id="projects">
       <div class="container">
         <div class="section-heading">
-          <span class="section-label">Projects</span>
+          <span class="section-label">Student-Led Project</span>
 
-          <h2>Ideas designed to support others.</h2>
+          <h2>Magic Box</h2>
 
           <p>
-            My projects focus on youth voice, emotional well-being,
-            and accessible support.
+            An anonymous voice platform created to support student emotional
+            well-being and provide a safer space for honest expression.
+          </p>
+        </div>
+
+        <article class="card project-card">
+          <span class="badge">Pilot Across Three Grade Levels</span>
+
+          <h3>Anonymous Voice Platform for Youth</h3>
+
+          <p class="subtitle">
+            Originated from a Social Emotional Learning course
+          </p>
+
+          <p>
+            During a Social Emotional Learning course, my team and I focused on
+            mental health and well-being. We noticed that high school students
+            were facing increasing pressure but often lacked a safe place to
+            talk about their experiences. I recruited team members and
+            initiated Magic Box as an anonymous channel where students could
+            write about thoughts they did not feel comfortable sharing with
+            friends or family.
+          </p>
+
+          <div class="project-process">
+            <div class="process-item">
+              <strong>1. Research</strong>
+              <span>
+                Collected information about youth mental health and considered
+                potential challenges with teachers.
+              </span>
+            </div>
+
+            <div class="process-item">
+              <strong>2. Promotion</strong>
+              <span>
+                Created collection boxes and promotional materials and
+                introduced the project throughout the international division.
+              </span>
+            </div>
+
+            <div class="process-item">
+              <strong>3. Collection</strong>
+              <span>
+                Collected anonymous messages and encouraged participation with
+                positive notes and small gifts.
+              </span>
+            </div>
+
+            <div class="process-item">
+              <strong>4. Response</strong>
+              <span>
+                Organized messages by themes, created a presentation and video,
+                and held classroom discussions.
+              </span>
+            </div>
+          </div>
+
+          <h4>Message Categories</h4>
+
+          <ul>
+            <li>Family relationships</li>
+            <li>Friendship</li>
+            <li>Romantic relationships</li>
+            <li>Academic pressure</li>
+          </ul>
+
+          <h4>Purpose</h4>
+
+          <ul>
+            <li>Create a judgment-free channel for self-expression.</li>
+            <li>Help students feel heard, understood, and supported.</li>
+            <li>Build empathy through shared experiences.</li>
+            <li>Encourage a more positive and supportive school environment.</li>
+          </ul>
+
+          <div class="note">
+            The project ran across all three high school grade levels. A future
+            online expansion through Root &amp; Shoot has been considered but
+            is currently paused.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="volunteer" class="alternate">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Volunteer Experience</span>
+
+          <h2>
+            Music and interaction with autistic children
+          </h2>
+
+          <p>
+            My volunteer experience helped me understand the importance of
+            patience, observation, flexible communication, and trust.
           </p>
         </div>
 
         <div class="grid">
-          <article class="card project">
-            <h3>Magic Box</h3>
+          <article class="card">
+            <h3>Volunteer Work in Qingdao</h3>
 
             <p class="subtitle">
-              Anonymous Voice Platform for Youth
+              Interaction with children with autism spectrum disorder
             </p>
 
             <p>
-              Magic Box is a safe and anonymous space where students
-              can share thoughts they may not feel comfortable
-              discussing with friends or family.
+              I regularly visited a center for autistic children in Qingdao.
+              I tried different ways to interact with the children, including
+              games, chess, and calligraphy. I found that some children had
+              difficulty following instructions or maintaining attention for
+              long periods.
             </p>
-
-            <h4>Purpose</h4>
-
-            <ul>
-              <li>
-                Support honest and anonymous self-expression.
-              </li>
-
-              <li>
-                Create a judgment-free student community.
-              </li>
-
-              <li>
-                Help students feel seen, heard, and understood.
-              </li>
-
-              <li>
-                Build empathy through shared experiences.
-              </li>
-            </ul>
-
-            <h4>Current Status</h4>
 
             <p>
-              The pilot program is running across all three high
-              school grade levels.
+              During one music class, I noticed that classical music gradually
+              helped a restless classroom become quieter. Some children began
+              moving their hands with the rhythm.
             </p>
-
-            <div class="status-note">
-              Future expansion is being explored through the Root
-              &amp; Shoot Global Network.
-            </div>
           </article>
 
-          <article class="card project">
-            <h3>Harmony Bridge</h3>
+          <article class="card">
+            <h3>Discovering the Handpan</h3>
 
             <p class="subtitle">
-              Music-Based Emotional Learning for Neurodiverse
-              Children
+              Building trust through sound and free exploration
             </p>
 
             <p>
-              Harmony Bridge is a nonprofit concept focused on
-              supporting neurodiverse children through music-based
-              emotional learning.
+              I introduced a handpan, whose shape led the children to call it a
+              “UFO.” After playing a short melody, I allowed them to explore the
+              instrument freely and create their own rhythms without strict
+              instructions.
             </p>
 
-            <h4>Approach</h4>
-
-            <ul>
-              <li>
-                Use handpan music to encourage calm and connection.
-              </li>
-
-              <li>
-                Use classical music to support emotional recognition.
-              </li>
-
-              <li>
-                Design programs for different ages and abilities.
-              </li>
-
-              <li>
-                Develop family support and educator resources.
-              </li>
-            </ul>
-
-            <h4>Current Status</h4>
-
             <p>
-              The project is temporarily paused while resources,
-              partnerships, and implementation plans are being
-              developed.
+              This experience helped me build trust with the children and
+              inspired me to think about how classical music and handpan
+              activities could support emotional recognition and
+              self-expression.
+            </p>
+
+            <div class="note">
+              This experience became the starting point for the Harmony Bridge
+              concept, which is currently in the planning stage and temporarily
+              paused.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Leadership</span>
+
+          <h2>What leadership means to me.</h2>
+
+          <p>
+            My projects and volunteer experiences have shaped my understanding
+            of effective leadership.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <article class="small-card">
+            <h3>Planning</h3>
+            <p>
+              Understanding the purpose of a project and organizing each stage
+              before implementation.
+            </p>
+          </article>
+
+          <article class="small-card">
+            <h3>Time Management</h3>
+            <p>
+              Distributing responsibilities and keeping the team focused during
+              busy periods.
+            </p>
+          </article>
+
+          <article class="small-card">
+            <h3>Empathy and Listening</h3>
+            <p>
+              Paying attention to team members and understanding the emotions
+              and needs of the people being supported.
+            </p>
+          </article>
+
+          <article class="small-card">
+            <h3>Decision and Execution</h3>
+            <p>
+              Making clear decisions when necessary and turning plans into
+              concrete actions.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" class="alternate">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Interests</span>
+
+          <h2>Activities that shape how I think.</h2>
+        </div>
+
+        <div class="interests-grid">
+          <article class="small-card">
+            <h3>Taekwondo</h3>
+            <p>
+              I began learning taekwondo at the age of four. Long-term training
+              has taught me resilience, observation, strategy, and calm
+              thinking under pressure.
+            </p>
+          </article>
+
+          <article class="small-card">
+            <h3>Reading</h3>
+            <p>
+              Reading helps me organize information, identify the main structure
+              of an idea, and create space for deeper thinking.
+            </p>
+          </article>
+
+          <article class="small-card">
+            <h3>Meditation</h3>
+            <p>
+              Meditation helps me recover from a fast-paced schedule, focus my
+              attention, and reflect more clearly.
+            </p>
+          </article>
+
+          <article class="small-card">
+            <h3>Bel Canto Singing</h3>
+            <p>
+              Singing has helped me understand breathing, resonance, rhythm, and
+              the connection between music and emotion.
             </p>
           </article>
         </div>
@@ -849,45 +1158,41 @@
     <section id="skills">
       <div class="container">
         <div class="section-heading">
-          <span class="section-label">
-            Skills &amp; Strengths
-          </span>
+          <span class="section-label">Skills</span>
 
           <h2>Skills I continue to develop.</h2>
         </div>
 
-        <div class="skills">
-          <article class="skill">
+        <div class="skills-grid">
+          <article class="small-card">
             <h3>Economics</h3>
-
             <p>
-              Economic reasoning, market analysis, and systems
-              thinking.
+              Economic reasoning, consumer behavior, market analysis, and
+              systems thinking.
             </p>
           </article>
 
-          <article class="skill">
+          <article class="small-card">
             <h3>Mathematics</h3>
-
             <p>
-              Logical reasoning and structured problem-solving.
+              Logical reasoning, pattern recognition, and structured
+              problem-solving.
             </p>
           </article>
 
-          <article class="skill">
-            <h3>Excel</h3>
-
+          <article class="small-card">
+            <h3>Data Analysis</h3>
             <p>
-              Data organization, formulas, and trend analysis.
+              Comparing information, identifying variables, and interpreting
+              patterns.
             </p>
           </article>
 
-          <article class="skill">
-            <h3>Taekwondo</h3>
-
+          <article class="small-card">
+            <h3>Microsoft Excel</h3>
             <p>
-              Discipline, resilience, observation, and focus under
-              pressure.
+              Developing skills in formulas, data organization, and basic
+              analysis.
             </p>
           </article>
         </div>
@@ -901,9 +1206,8 @@
             <h2>Let’s connect.</h2>
 
             <p>
-              I am interested in economics, youth leadership,
-              emotional well-being, inclusive education, and social
-              innovation.
+              I am interested in economics, linguistics, youth emotional
+              well-being, social innovation, music, and community projects.
             </p>
           </div>
 
