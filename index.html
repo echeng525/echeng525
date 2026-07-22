@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Elena Cheng — student profile, academic achievements, skills, and community initiatives."
+    content="Elena Cheng — high school student, economics enthusiast, and youth initiative founder."
   >
-  <title>Elena Cheng | Student Profile</title>
+  <title>Elena Cheng | Personal Website</title>
 
   <style>
     :root {
       --navy: #0d2747;
       --blue: #1565c0;
+      --bright-blue: #2196f3;
       --light-blue: #e3f2fd;
-      --line: #d8e4ef;
-      --text: #24384c;
-      --muted: #60758a;
+      --page: #f6f9fc;
       --white: #ffffff;
-      --page: #f5f8fb;
+      --text: #25384b;
+      --muted: #64778a;
+      --line: #dce6ef;
+      --shadow: 0 18px 50px rgba(13, 39, 71, 0.1);
+      --radius: 18px;
     }
 
     * {
@@ -35,7 +38,7 @@
       color: var(--text);
       background: var(--page);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
@@ -43,546 +46,882 @@
       text-decoration: none;
     }
 
-    .page {
-      width: min(1080px, calc(100% - 32px));
-      margin: 32px auto;
-      overflow: hidden;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 18px 50px rgba(13, 39, 71, 0.08);
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: auto;
     }
 
-    .header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 32px;
-      padding: 54px 58px;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--navy), var(--blue));
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
-    .header h1 {
-      margin-bottom: 8px;
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 70px;
+      gap: 24px;
     }
 
-    .title {
-      max-width: 650px;
-      color: #dbeafe;
-      font-size: 1.08rem;
-      font-weight: 700;
+    .brand {
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 800;
     }
 
-    .contact {
-      display: grid;
-      align-content: end;
-      justify-items: end;
-      gap: 7px;
-      color: #eaf3ff;
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      color: var(--muted);
       font-size: 0.92rem;
-      text-align: right;
-    }
-
-    .contact a {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-    }
-
-    .content {
-      display: grid;
-      grid-template-columns: 0.72fr 1.28fr;
-    }
-
-    .sidebar,
-    .main {
-      padding: 46px;
-    }
-
-    .sidebar {
-      background: #f7fbff;
-      border-right: 1px solid var(--line);
-    }
-
-    .section + .section {
-      margin-top: 38px;
-    }
-
-    .section-title {
-      padding-bottom: 9px;
-      margin-bottom: 17px;
-      color: var(--navy);
-      border-bottom: 2px solid var(--blue);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    .profile {
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .school {
-      color: var(--navy);
-      font-weight: 800;
-    }
-
-    .meta {
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .skill-list,
-    .simple-list {
-      display: grid;
-      gap: 10px;
+      font-weight: 700;
       list-style: none;
     }
 
-    .skill-list li,
-    .simple-list li {
-      position: relative;
-      padding-left: 17px;
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      min-height: calc(100vh - 70px);
+      padding: 88px 0;
+      gap: 68px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      margin-bottom: 22px;
+      color: var(--blue);
+      background: var(--light-blue);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: var(--navy);
+      font-size: clamp(3.3rem, 8vw, 6.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .headline {
+      max-width: 760px;
+      margin-bottom: 18px;
+      color: var(--blue);
+      font-size: clamp(1.2rem, 2.6vw, 1.7rem);
+      font-weight: 800;
+    }
+
+    .hero-text {
+      max-width: 740px;
+      margin-bottom: 30px;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 1.04rem;
     }
 
-    .skill-list li::before,
-    .simple-list li::before {
-      position: absolute;
-      top: 0.62em;
-      left: 0;
-      width: 6px;
-      height: 6px;
-      content: "";
-      background: var(--blue);
-      border-radius: 50%;
-    }
-
-    .tag-list {
+    .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 6px 10px;
-      color: var(--navy);
-      background: var(--light-blue);
-      border: 1px solid #c8def2;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    .entry + .entry {
-      margin-top: 32px;
-      padding-top: 30px;
-      border-top: 1px solid var(--line);
-    }
-
-    .entry-header {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 18px;
-      margin-bottom: 11px;
-    }
-
-    .entry h3 {
-      color: var(--navy);
-      font-size: 1.25rem;
-      line-height: 1.3;
-    }
-
-    .subtitle {
-      margin-top: 3px;
-      color: var(--blue);
-      font-size: 0.93rem;
-      font-weight: 700;
-    }
-
-    .status {
-      padding: 5px 9px;
-      color: var(--blue);
-      background: var(--light-blue);
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .entry p {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .entry ul {
-      display: grid;
-      gap: 8px;
-      padding-left: 18px;
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .competencies {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 18px;
     }
 
-    .competency {
-      padding: 14px;
-      background: #f7f9fc;
-      border: 1px solid var(--line);
-      border-radius: 10px;
+    .button {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: 0.2s ease;
     }
 
-    .competency strong {
-      display: block;
-      margin-bottom: 3px;
+    .button-primary {
+      color: var(--white);
+      background: linear-gradient(
+        135deg,
+        var(--bright-blue),
+        var(--navy)
+      );
+      box-shadow: 0 12px 28px rgba(21, 101, 192, 0.22);
+    }
+
+    .button-secondary {
       color: var(--navy);
-      font-size: 0.9rem;
+      background: var(--white);
+      border: 1px solid var(--line);
     }
 
-    .competency span {
-      color: var(--muted);
-      font-size: 0.84rem;
+    .button:hover {
+      transform: translateY(-2px);
     }
 
-    .footer {
-      padding: 20px 58px;
-      color: var(--muted);
-      background: #f7fbff;
-      border-top: 1px solid var(--line);
-      font-size: 0.84rem;
+    .profile-panel {
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .initials {
+      display: grid;
+      place-items: center;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 24px;
+      color: var(--white);
+      background: linear-gradient(
+        135deg,
+        var(--bright-blue),
+        var(--navy)
+      );
+      border-radius: 50%;
+      font-size: 3.4rem;
+      font-weight: 800;
+      letter-spacing: -0.08em;
+    }
+
+    .profile-panel h2 {
+      margin-bottom: 5px;
+      color: var(--navy);
       text-align: center;
     }
 
-    @media (max-width: 780px) {
-      .page {
-        width: 100%;
-        margin: 0;
-        border: 0;
-        border-radius: 0;
-      }
+    .profile-panel > p {
+      color: var(--muted);
+      text-align: center;
+    }
 
-      .header {
+    .quick-facts {
+      display: grid;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .quick-fact {
+      padding: 13px 15px;
+      background: #f7faff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .quick-fact strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.87rem;
+    }
+
+    .quick-fact span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    section {
+      padding: 84px 0;
+      scroll-margin-top: 82px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 8px 0 12px;
+      color: var(--navy);
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p,
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card {
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 34px rgba(13, 39, 71, 0.07);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .about p + p {
+      margin-top: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      padding: 22px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--blue);
+      font-size: 1.45rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .achievement h3,
+    .project h3 {
+      margin-bottom: 5px;
+      color: var(--navy);
+      font-size: 1.35rem;
+    }
+
+    .subtitle {
+      margin-bottom: 16px;
+      color: var(--blue);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      margin-bottom: 17px;
+      color: var(--blue);
+      background: var(--light-blue);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .achievement ul,
+    .project ul {
+      display: grid;
+      gap: 8px;
+      padding-left: 19px;
+      margin-top: 15px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      content: "";
+      background: linear-gradient(
+        var(--bright-blue),
+        var(--navy)
+      );
+    }
+
+    .project h4 {
+      margin: 22px 0 9px;
+      color: var(--navy);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-note {
+      padding: 13px 15px;
+      margin-top: 19px;
+      color: var(--navy);
+      background: #f2f8fd;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .skill h3 {
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      padding: 46px;
+      color: var(--white);
+      background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--blue)
+      );
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2 {
+      margin-bottom: 9px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .contact-card p {
+      max-width: 680px;
+      color: #dbeafe;
+    }
+
+    .email {
+      padding: 13px 18px;
+      color: var(--navy);
+      background: var(--white);
+      border-radius: 12px;
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 30px 0 38px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about,
+      .contact-card {
         grid-template-columns: 1fr;
-        padding: 42px 28px;
       }
 
-      .contact {
-        justify-items: start;
-        text-align: left;
+      .hero {
+        min-height: auto;
       }
 
-      .content {
-        grid-template-columns: 1fr;
+      .profile-panel {
+        width: min(460px, 100%);
       }
 
-      .sidebar,
-      .main {
-        padding: 34px 28px;
+      .stats,
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .sidebar {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .entry-header {
-        grid-template-columns: 1fr;
-      }
-
-      .status {
+      .email {
         justify-self: start;
       }
     }
 
-    @media (max-width: 520px) {
-      .competencies {
+    @media (max-width: 680px) {
+      .nav-inner {
+        flex-direction: column;
+        padding: 13px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 13px;
+        font-size: 0.84rem;
+      }
+
+      .hero {
+        padding: 60px 0;
+        gap: 38px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .grid,
+      .stats,
+      .skills {
         grid-template-columns: 1fr;
       }
 
-      .header h1 {
-        font-size: 2.8rem;
-      }
-    }
-
-    @media print {
-      body {
-        background: var(--white);
+      .card,
+      .contact-card {
+        padding: 24px;
       }
 
-      .page {
-        width: 100%;
-        margin: 0;
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
+      h1 {
+        font-size: 3.5rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <header class="header">
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Elena Cheng</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <header class="container hero" id="home">
       <div>
+        <span class="eyebrow">
+          Student · Economics · Social Impact
+        </span>
+
         <h1>Elena Cheng</h1>
-        <p class="title">
-          High School Student | Economics Enthusiast | Youth Initiative Founder
+
+        <p class="headline">
+          A high school student combining analytical thinking,
+          discipline, and empathy to create meaningful change.
         </p>
+
+        <p class="hero-text">
+          I am an incoming junior at Qingdao Grand High School with
+          interests in economics, mathematics, data analysis, and youth
+          well-being. Through academic competitions, taekwondo, and
+          student-led projects, I am learning how to turn ideas into
+          practical action.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href="#projects">
+            View My Projects
+          </a>
+
+          <a class="button button-secondary" href="#contact">
+            Contact Me
+          </a>
+        </div>
       </div>
 
-      <div class="contact">
-        <span>Qingdao Grand High School</span>
-        <span>Incoming Grade 11 Student</span>
+      <aside class="profile-panel">
+        <div class="initials">EC</div>
 
-        <a href="mailto:xuanchang.elena.cheng@gmail.com">
-          xuanchang.elena.cheng@gmail.com
-        </a>
-      </div>
+        <h2>Elena Cheng</h2>
+
+        <p>
+          Student · Economic Thinker · Youth Initiative Founder
+        </p>
+
+        <div class="quick-facts">
+          <div class="quick-fact">
+            <strong>School</strong>
+            <span>Qingdao Grand High School</span>
+          </div>
+
+          <div class="quick-fact">
+            <strong>Current Level</strong>
+            <span>Incoming Junior</span>
+          </div>
+
+          <div class="quick-fact">
+            <strong>Main Interests</strong>
+            <span>Economics, mathematics, social impact</span>
+          </div>
+        </div>
+      </aside>
     </header>
 
-    <div class="content">
-      <aside class="sidebar">
-        <section class="section">
-          <h2 class="section-title">Profile</h2>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">About Me</span>
 
-          <p class="profile">
-            Motivated high school student with strong interests in economics,
-            mathematics, data analysis, and youth-led social impact. Experienced
-            in academic competition, community project development, and
-            disciplined athletic training. Interested in applying analytical
-            thinking and empathy to practical challenges.
+          <h2>
+            Curious about systems. Committed to people.
+          </h2>
+
+          <p>
+            My interests connect analytical learning with real
+            community needs.
           </p>
-        </section>
+        </div>
 
-        <section class="section">
-          <h2 class="section-title">Education</h2>
+        <div class="about">
+          <article class="card">
+            <p>
+              Economics fascinates me because it explains how
+              individual choices, institutions, and markets interact.
+              Mathematics and data analysis help me examine problems
+              logically, while Excel is helping me organize
+              information and communicate conclusions more clearly.
+            </p>
 
-          <p class="school">Qingdao Grand High School</p>
-          <p class="meta">Incoming Grade 11 Student</p>
-        </section>
+            <p>
+              My experience in academic competition has strengthened
+              my decision-making, systems thinking, and
+              problem-solving skills.
+            </p>
+          </article>
 
-        <section class="section">
-          <h2 class="section-title">Core Skills</h2>
+          <article class="card">
+            <p>
+              Taekwondo has taught me discipline, resilience, focus,
+              and calm thinking under pressure. I bring these
+              qualities into my academic work and community projects.
+            </p>
 
-          <ul class="skill-list">
-            <li>Economic analysis</li>
-            <li>Mathematical reasoning</li>
-            <li>Data interpretation</li>
-            <li>Systems thinking</li>
-            <li>Decision-making</li>
-            <li>Problem-solving</li>
-            <li>Microsoft Excel — developing</li>
-          </ul>
-        </section>
+            <p>
+              I hope to continue combining analytical thinking with
+              empathy to create projects that help young people feel
+              heard, supported, and connected.
+            </p>
+          </article>
+        </div>
 
-        <section class="section">
-          <h2 class="section-title">Additional Strengths</h2>
-
-          <div class="tag-list">
-            <span class="tag">Leadership</span>
-            <span class="tag">Empathy</span>
-            <span class="tag">Discipline</span>
-            <span class="tag">Communication</span>
-            <span class="tag">Taekwondo</span>
+        <div class="stats">
+          <div class="stat">
+            <strong>Top 10%</strong>
+            <span>IOL High Distinction</span>
           </div>
-        </section>
 
-        <section class="section">
-          <h2 class="section-title">Interests</h2>
+          <div class="stat">
+            <strong>Distinction</strong>
+            <span>NEC China PRE Division</span>
+          </div>
 
-          <ul class="simple-list">
-            <li>Economics and global markets</li>
-            <li>Youth mental well-being</li>
-            <li>Social innovation</li>
-            <li>Inclusive education</li>
-            <li>Music-based emotional learning</li>
-          </ul>
-        </section>
-      </aside>
+          <div class="stat">
+            <strong>3 Grades</strong>
+            <span>Magic Box pilot coverage</span>
+          </div>
 
-      <div class="main">
-        <section class="section">
-          <h2 class="section-title">Academic Achievements</h2>
-
-          <article class="entry">
-            <div class="entry-header">
-              <div>
-                <h3>IOL Linguistics Competition</h3>
-                <p class="subtitle">Rookie Junior Division</p>
-              </div>
-
-              <span class="status">High Distinction · Top 10%</span>
-            </div>
-
-            <p>
-              Earned High Distinction, placing within the top 10% in the
-              IOL Rookie Junior Division.
-            </p>
-          </article>
-
-          <article class="entry">
-            <div class="entry-header">
-              <div>
-                <h3>NEC China</h3>
-
-                <p class="subtitle">
-                  PRE Division | National Economics Challenge
-                </p>
-              </div>
-
-              <span class="status">Individual Distinction</span>
-            </div>
-
-            <p>
-              Earned Individual Distinction in the PRE Division at NEC China
-              and later represented my school in the NEC Global Competition.
-            </p>
-
-            <div class="competencies">
-              <div class="competency">
-                <strong>Data Analysis</strong>
-                <span>Interpreting economic data and trends</span>
-              </div>
-
-              <div class="competency">
-                <strong>Systems Thinking</strong>
-                <span>Understanding connected markets and institutions</span>
-              </div>
-
-              <div class="competency">
-                <strong>Decision-Making</strong>
-                <span>Using evidence and economic principles</span>
-              </div>
-
-              <div class="competency">
-                <strong>Problem-Solving</strong>
-                <span>Applying theory to practical challenges</span>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">Leadership &amp; Projects</h2>
-
-          <article class="entry">
-            <div class="entry-header">
-              <div>
-                <h3>Magic Box</h3>
-
-                <p class="subtitle">
-                  Founder | Anonymous Voice Platform for Youth
-                </p>
-              </div>
-
-              <span class="status">Pilot Program</span>
-            </div>
-
-            <p>
-              Developed a safe and anonymous platform where students can share
-              thoughts they may not feel comfortable discussing with friends or
-              family. The project aims to strengthen student voice, emotional
-              well-being, and community connection.
-            </p>
-
-            <ul>
-              <li>
-                Created a judgment-free channel for authentic self-expression.
-              </li>
-
-              <li>
-                Designed the program to help students feel heard and understood.
-              </li>
-
-              <li>
-                Promoted empathy through shared experiences and reflection.
-              </li>
-
-              <li>
-                Launched the pilot across all three high school grade levels.
-              </li>
-
-              <li>
-                Exploring future expansion through the Roots &amp; Shoots
-                global network.
-              </li>
-            </ul>
-          </article>
-
-          <article class="entry">
-            <div class="entry-header">
-              <div>
-                <h3>Harmony Bridge</h3>
-
-                <p class="subtitle">
-                  Founder | Music-Based Emotional Learning for Neurodiverse
-                  Children
-                </p>
-              </div>
-
-              <span class="status">Planning Phase</span>
-            </div>
-
-            <p>
-              Developed a nonprofit concept focused on supporting neurodiverse
-              children through music-based emotional learning. The project is
-              currently paused while its resources, partnerships, and
-              implementation plan are being developed.
-            </p>
-
-            <ul>
-              <li>
-                Uses handpan music to encourage calm and emotional connection.
-              </li>
-
-              <li>
-                Uses classical music as a framework for emotional recognition.
-              </li>
-
-              <li>
-                Plans age- and ability-appropriate learning programs.
-              </li>
-
-              <li>
-                Envisions low-cost programs, educator training, and family
-                support.
-              </li>
-            </ul>
-          </article>
-        </section>
-
-        <section class="section">
-          <h2 class="section-title">Personal Statement</h2>
-
-          <p class="profile">
-            Economics interests me because it explains how individual choices,
-            institutions, and markets interact. My experience in NEC
-            strengthened my ability to analyze complex information and
-            confirmed my interest in using economics as a tool for practical
-            problem-solving. Alongside my academic work, taekwondo has taught me
-            discipline, resilience, and focus. I hope to continue combining
-            analytical thinking with empathy to create meaningful projects for
-            young people and their communities.
-          </p>
-        </section>
+          <div class="stat">
+            <strong>2 Projects</strong>
+            <span>Youth and community initiatives</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <footer class="footer">
-      Elena Cheng · Student Profile
-    </footer>
+    <section id="achievements">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">
+            Academic Achievements
+          </span>
+
+          <h2>Learning beyond the classroom.</h2>
+
+          <p>
+            Competitions have helped me apply knowledge, think
+            independently, and solve unfamiliar problems.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card achievement">
+            <span class="badge">
+              High Distinction · Top 10%
+            </span>
+
+            <h3>IOL Linguistics Competition</h3>
+
+            <p class="subtitle">
+              Rookie Junior Division
+            </p>
+
+            <p>
+              Earned High Distinction and placed within the top 10%
+              in the IOL Rookie Junior Division.
+            </p>
+
+            <ul>
+              <li>
+                Applied logical reasoning to unfamiliar language
+                systems.
+              </li>
+
+              <li>
+                Identified patterns across language, culture, and
+                structure.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card achievement">
+            <span class="badge">
+              Individual Distinction
+            </span>
+
+            <h3>NEC China</h3>
+
+            <p class="subtitle">
+              PRE Division · National Economics Challenge
+            </p>
+
+            <p>
+              Earned Individual Distinction in the PRE Division at
+              NEC China and participated in the NEC Global
+              Competition representing my school.
+            </p>
+
+            <ul>
+              <li>
+                Interpreted economic data and market trends.
+              </li>
+
+              <li>
+                Applied economic principles to real-world
+                challenges.
+              </li>
+
+              <li>
+                Developed systems thinking and evidence-based
+                decision-making.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Projects</span>
+
+          <h2>Ideas designed to support others.</h2>
+
+          <p>
+            My projects focus on youth voice, emotional well-being,
+            and accessible support.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card project">
+            <h3>Magic Box</h3>
+
+            <p class="subtitle">
+              Anonymous Voice Platform for Youth
+            </p>
+
+            <p>
+              Magic Box is a safe and anonymous space where students
+              can share thoughts they may not feel comfortable
+              discussing with friends or family.
+            </p>
+
+            <h4>Purpose</h4>
+
+            <ul>
+              <li>
+                Support honest and anonymous self-expression.
+              </li>
+
+              <li>
+                Create a judgment-free student community.
+              </li>
+
+              <li>
+                Help students feel seen, heard, and understood.
+              </li>
+
+              <li>
+                Build empathy through shared experiences.
+              </li>
+            </ul>
+
+            <h4>Current Status</h4>
+
+            <p>
+              The pilot program is running across all three high
+              school grade levels.
+            </p>
+
+            <div class="status-note">
+              Future expansion is being explored through the Root
+              &amp; Shoot Global Network.
+            </div>
+          </article>
+
+          <article class="card project">
+            <h3>Harmony Bridge</h3>
+
+            <p class="subtitle">
+              Music-Based Emotional Learning for Neurodiverse
+              Children
+            </p>
+
+            <p>
+              Harmony Bridge is a nonprofit concept focused on
+              supporting neurodiverse children through music-based
+              emotional learning.
+            </p>
+
+            <h4>Approach</h4>
+
+            <ul>
+              <li>
+                Use handpan music to encourage calm and connection.
+              </li>
+
+              <li>
+                Use classical music to support emotional recognition.
+              </li>
+
+              <li>
+                Design programs for different ages and abilities.
+              </li>
+
+              <li>
+                Develop family support and educator resources.
+              </li>
+            </ul>
+
+            <h4>Current Status</h4>
+
+            <p>
+              The project is temporarily paused while resources,
+              partnerships, and implementation plans are being
+              developed.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">
+            Skills &amp; Strengths
+          </span>
+
+          <h2>Skills I continue to develop.</h2>
+        </div>
+
+        <div class="skills">
+          <article class="skill">
+            <h3>Economics</h3>
+
+            <p>
+              Economic reasoning, market analysis, and systems
+              thinking.
+            </p>
+          </article>
+
+          <article class="skill">
+            <h3>Mathematics</h3>
+
+            <p>
+              Logical reasoning and structured problem-solving.
+            </p>
+          </article>
+
+          <article class="skill">
+            <h3>Excel</h3>
+
+            <p>
+              Data organization, formulas, and trend analysis.
+            </p>
+          </article>
+
+          <article class="skill">
+            <h3>Taekwondo</h3>
+
+            <p>
+              Discipline, resilience, observation, and focus under
+              pressure.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <h2>Let’s connect.</h2>
+
+            <p>
+              I am interested in economics, youth leadership,
+              emotional well-being, inclusive education, and social
+              innovation.
+            </p>
+          </div>
+
+          <a
+            class="email"
+            href="mailto:xuanchang.elena.cheng@gmail.com"
+          >
+            xuanchang.elena.cheng@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Elena Cheng
+    </div>
+  </footer>
 </body>
 </html>
